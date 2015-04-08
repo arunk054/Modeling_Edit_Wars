@@ -1,2 +1,2 @@
-# Modeling_Edit_Wars
+# Modeling Edit Wars
 An agent-based model and simulation of edit wars in Java.
