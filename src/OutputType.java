@@ -1,0 +1,9 @@
+
+public enum OutputType {
+	ALL,
+	CONSENSUS,
+	ITERATIONS,
+	EFFICIENCY,
+	INFLUENCE
+
+}
