@@ -47,9 +47,10 @@ public class GroupAgentGenerator implements AgentGenerator{
 
 
 		for (int i = 0; i < numModerAgents; ++i){			
-			double val1 = moderateValue;
+			double val1 = extremeMaxValue;
+			double val2 = extremeMinValue;
 			//in order C+/R-/C-/R+			
-			double[] actionProb = {val1,val1,val1,val1};
+			double[] actionProb = {val1,val2,val1,val2};
 			
 			agentList.add(new Agent(actionProb[0],actionProb[1],actionProb[2],actionProb[3],alphaRandom.nextDouble()));
 		}

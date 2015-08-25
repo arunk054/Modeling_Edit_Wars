@@ -6,7 +6,7 @@ import java.util.Random;
 public class FlexibleAgentGenerator implements AgentGenerator{
 
 	private ArrayList<Agent> agentList;
-
+	static int seed = 1;
 	public FlexibleAgentGenerator(int numAgents, NormalGenerator normRandom, Random uniformRandom, boolean isAlpha) {
 		
 		
@@ -14,7 +14,9 @@ public class FlexibleAgentGenerator implements AgentGenerator{
 		for (int i = 0; i < numAgents; i++) {
 			double commitProbability = 0;
 			if (isAlpha){
-				commitProbability = uniformRandom.nextDouble();	
+				commitProbability = uniformRandom.nextDouble();
+				//NormalGenerator nr = new NormalGenerator(seed++, 0.5, 0.05);
+				//commitProbability = nr.getNext();
 			} else {
 				commitProbability = normRandom.getNext();	
 			}

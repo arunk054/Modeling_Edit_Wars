@@ -7,8 +7,7 @@ public class LaunchPCommit {
 
 
 	public static void main(String[] args) {
-		//double[] arr= {0.2,0.4,0.6,0.8};
-		double[] arr= {0.001};
+		double[] arr= {0.2,0.4,0.6,0.8};
 		for (int i = 0; i < arr.length; i++) {
 			launch(100,0.5,arr[i]);	
 		}
@@ -20,7 +19,6 @@ public class LaunchPCommit {
 
 		
 		int maxIterations = 2000;
-		
 		
 		int repititions = 1000;
 		
@@ -37,7 +35,7 @@ public class LaunchPCommit {
 			String allFile = "PCommit_0.05_"+repititions+"_"+numAgents+"_"+lambda+"_"+LC;
 			String summaryFile = allFile+"_summary"; 
 			ex.writeAllToFile(allFile+".csv");
-			//ex.writeSummaryToFile(summaryFile+".csv");
+			ex.writeSummaryToFile(summaryFile+".csv");
 			ex.printOutput( OutputType.ALL);
 			System.out.println();
 		

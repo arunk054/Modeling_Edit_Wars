@@ -7,9 +7,9 @@ public class LaunchAlpha {
 
 	public static void main(String[] args) {
 		//double[] arr= {0.2,0.4,0.6,0.8};
-		double[] arr= {.8};
+		double[] arr= {0.2,0.3,0.4,0.5,0.6,0.7,0.8};
 		for (int i = 0; i < arr.length; i++) {
-			launch(100,0.9, arr[i]);	
+			launch(100,0.5, arr[i]);	
 		}
 		
 	}
@@ -25,15 +25,15 @@ public class LaunchAlpha {
 			//# repititions
 			for (int j = 0; j < repititions; ++j){
 				Simulation s = new Simulation(lambda, new FlexibleAgentGenerator(numAgents, 
-						new NormalGenerator(normRandomSeed++, alpha, 0.05), 
+						new NormalGenerator(normRandomSeed++, alpha, 0.02), 
 						new Random(agentSelectionSeed++), true), agentSelectionSeed, actionSelSeed);
 				ex.runExperiment(s);
 				
 			}
-			String allFile = "Alpha_0.05"+repititions+"_"+numAgents+"_"+lambda+"_"+alpha;
+			String allFile = "Alpha_0.05_"+repititions+"_"+numAgents+"_"+lambda+"_"+alpha;
 			String summaryFile = allFile+"_summary"; 
 			ex.writeAllToFile(allFile+".csv");
-			//ex.writeSummaryToFile(summaryFile+".csv");
+			ex.writeSummaryToFile(summaryFile+".csv");
 			ex.printOutput( OutputType.ALL);
 			System.out.println();
 		

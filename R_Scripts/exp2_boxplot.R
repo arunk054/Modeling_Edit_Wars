@@ -1,6 +1,6 @@
 library(gdata)  
 
-
+setwd("/Users/arunkaly/Box Documents/Spring_2014/computational_modeling_of_complex_socio_technical/Project/my_proj/Paper/Scripts/data")
 getwd()
 mydata1 = read.csv("Alpha_0.05_Turns.csv") 
 mydata2 = read.csv("Alpha_0.05_Efficiency.csv") 

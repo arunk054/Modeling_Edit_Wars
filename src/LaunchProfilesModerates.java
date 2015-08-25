@@ -3,19 +3,13 @@ import java.util.Iterator;
 import java.util.Random;
 
 
-public class LaunchProfiles {
+public class LaunchProfilesModerates {
 
-	public static String getValue(int[] arr){
-		String s = "";
-		for (int i = 0; i < arr.length; i++) {
-			s += arr[i] + "_";
-		}
-		return s;
-	}
+	
 	public static void main(String[] args) {
 
 
-		int arr[][] = {{1,1,1},{1,0,1},{9,0,1},{1,0,9},{1,2,1},{0,1,0}};
+		int arr[][] = {{1,0,1},{1,1,1},{1,2,1},{1,3,1},{1,4,1},{1,5,1},{1,6,1},{1,8,1},{1,18,1}, {0,1,0}};
 		int maxIterations = 2000;
 		int numAgents = 100;
 		double lambda = 0.5;
@@ -31,7 +25,7 @@ public class LaunchProfiles {
 				ex.runExperiment(s);
 				
 			}
-			String allFile = "Profile_"+repititions+"_"+getValue(arr[i]);
+			String allFile = "Moderates_"+repititions+"_"+getValueModerates(arr[i]);
 			String summaryFile = allFile+"summary"; 
 			ex.writeAllToFile(allFile+".csv");
 			ex.writeSummaryToFile(summaryFile+".csv");
@@ -39,5 +33,25 @@ public class LaunchProfiles {
 			System.out.println();
 		}
 
-	}	
+	}
+	private static int getValueModerates(int[] arr) {
+		String s = "";
+		int total = 0;
+		for (int i = 0; i < arr.length; i++) {
+			total += arr[i];
+		}
+		double d = (double)arr[1]/total;
+		d = d*100;
+		int val = (int)d;
+		return val;
+		
+	}
+	
+	public static String getValue(int[] arr){
+		String s = "";
+		for (int i = 0; i < arr.length; i++) {
+			s += arr[i] + "_";
+		}
+		return s;
+	}
 }
